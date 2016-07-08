@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace MVC._3SI.SalesForce.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         // GET: Home
         public ActionResult Index()

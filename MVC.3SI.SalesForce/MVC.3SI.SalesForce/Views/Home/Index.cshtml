@@ -2,7 +2,9 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>Hello</h1>
+<div class="jumbotron" data-ng-app="myIndex" data-ng-controller="myIndexController">
+    <h1>{{text}}</h1>
     <p>This is a template showcasing the optional theme stylesheet included in Bootstrap.</p>
 </div>
+
+<script src="~/Assets/js/angular/controllers/myIndexController.js"></script>

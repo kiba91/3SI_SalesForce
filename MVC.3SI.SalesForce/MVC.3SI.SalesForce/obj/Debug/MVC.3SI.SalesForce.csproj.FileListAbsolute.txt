@@ -31,3 +31,11 @@ E:\GitLab\3SI-Salesforce\MVC.3SI.SalesForce\MVC.3SI.SalesForce\bin\System.Web.Mv
 E:\GitLab\3SI-Salesforce\MVC.3SI.SalesForce\MVC.3SI.SalesForce\obj\Debug\MVC.3SI.SalesForce.csprojResolveAssemblyReference.cache
 E:\GitLab\3SI-Salesforce\MVC.3SI.SalesForce\MVC.3SI.SalesForce\obj\Debug\MVC.3SI.SalesForce.dll
 E:\GitLab\3SI-Salesforce\MVC.3SI.SalesForce\MVC.3SI.SalesForce\obj\Debug\MVC.3SI.SalesForce.pdb
+E:\GitLab\3SI-Salesforce\MVC.3SI.SalesForce\MVC.3SI.SalesForce\bin\Newtonsoft.Json.dll
+E:\GitLab\3SI-Salesforce\MVC.3SI.SalesForce\MVC.3SI.SalesForce\bin\System.Net.Http.Formatting.dll
+E:\GitLab\3SI-Salesforce\MVC.3SI.SalesForce\MVC.3SI.SalesForce\bin\Newtonsoft.Json.xml
+E:\GitLab\3SI-Salesforce\MVC.3SI.SalesForce\MVC.3SI.SalesForce\bin\System.Net.Http.Formatting.xml
+E:\GitLab\3SI-Salesforce\MVC.3SI.SalesForce\MVC.3SI.SalesForce\bin\System.Web.Http.dll
+E:\GitLab\3SI-Salesforce\MVC.3SI.SalesForce\MVC.3SI.SalesForce\bin\System.Web.Http.WebHost.dll
+E:\GitLab\3SI-Salesforce\MVC.3SI.SalesForce\MVC.3SI.SalesForce\bin\System.Web.Http.xml
+E:\GitLab\3SI-Salesforce\MVC.3SI.SalesForce\MVC.3SI.SalesForce\bin\System.Web.Http.WebHost.xml
