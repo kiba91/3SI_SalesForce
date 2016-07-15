@@ -1,4 +1,7 @@
 ﻿using System.Web.Mvc;
+using MVC._3SI.SalesForce.Infrastructure;
+using MVC._3SI.SalesForce.Models;
+using System;
 
 namespace MVC._3SI.SalesForce.Controllers
 {
@@ -6,7 +9,8 @@ namespace MVC._3SI.SalesForce.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            var chatter = new ChatterModel(Convert.ToString(Session[Constants.AccessTokenSession]));
+            return View(chatter);
         }
     }
 }

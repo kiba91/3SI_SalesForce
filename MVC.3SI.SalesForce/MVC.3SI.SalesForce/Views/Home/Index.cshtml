@@ -1,10 +1,13 @@
-﻿@{
+﻿@using MVC._3SI.SalesForce.Infrastructure.Salesforce;
+@{
     ViewBag.Title = "Home Page";
+    var accessToken = new AccessTokenService();
 }
 
 <div class="jumbotron" data-ng-app="myIndex" data-ng-controller="myIndexController">
     <h1>{{text}}</h1>
     <p>This is a template showcasing the optional theme stylesheet included in Bootstrap.</p>
+    <a href="@accessToken.AuthorizationEndpoint">Click here to login</a>
 </div>
 
 <script src="~/Assets/js/angular/controllers/myIndexController.js"></script>
