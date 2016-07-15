@@ -29,11 +29,11 @@ namespace MVC._3SI.SalesForce.Controllers
                 }
                 else
                 {
-                    var refreshTokenCookie = Convert.ToString(Response.Cookies[Constants.RefreshAccessTokenSession]);
-                    if (!string.IsNullOrEmpty(refreshTokenCookie))
+                    var refreshTokenCookie = Response.Cookies[Constants.RefreshAccessTokenSession];
+                    if (!string.IsNullOrEmpty(refreshTokenCookie.Value))
                     {
                         //the author code is expired, get new access token by refresh token
-                        var refreshTokenData = accessTokenRequest.RefreshAccessToken(refreshTokenCookie);
+                        var refreshTokenData = accessTokenRequest.RefreshAccessToken(refreshTokenCookie.Value);
                         if (!string.IsNullOrEmpty(refreshTokenData.access_token)) {
                             Session[Constants.AccessTokenSession] = refreshTokenData.access_token;
 

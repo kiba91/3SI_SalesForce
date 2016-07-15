@@ -15,4 +15,4 @@ Note:
    Read more: https://help.salesforce.com/HTViewSolution?id=000221207&amp;language=en_US
  - If we set scope=full, the refesh_token is excluded from response string. We need add the refresh_token to scope on authorization request.
    Read more: https://help.salesforce.com/HTViewHelpDoc?id=remoteaccess_oauth_scopes.htm&language=en_US
- - force.com: cuongpv1991-74ye@force.com / Abcd1234
+ - force.com: cuongpv1991-74ye@ / Abcd1234
