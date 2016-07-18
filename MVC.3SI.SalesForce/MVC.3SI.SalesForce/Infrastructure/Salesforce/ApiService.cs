@@ -19,6 +19,25 @@ namespace MVC._3SI.SalesForce.Infrastructure.Salesforce
             };
             return request.DoRequest();
         }
+
+        public string GetUserProfile()
+        {
+            var request = new ApiWebRequest(string.Concat(BaseUrl, "/chatter/users/me"));
+            request.HeaderSettings = new List<KeyValuePair<string, string>> {
+                new KeyValuePair<string, string>("Authorization","Bearer " + AccessToken)
+            };
+            return request.DoRequest();
+        }
+
+        public string GetUserGroup()
+        {
+            var request = new ApiWebRequest(string.Concat(BaseUrl, "/chatter/groups"));
+            request.HeaderSettings = new List<KeyValuePair<string, string>> {
+                new KeyValuePair<string, string>("Authorization","Bearer " + AccessToken)
+            };
+            return request.DoRequest();
+        }
+
     }
 
 }
