@@ -1,0 +1,261 @@
+﻿@model MVC._3SI.SalesForce.Models.ProfileModel
+@{
+    ViewBag.Title = "Profile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<p></p>
+
+    @*<div ng-app="myApp" ng-controller="ProfileController">
+        <h1>{{myWelcome}}</h1>
+        {{status}}
+        <div>{{getProfile}}</div>
+        <button ng-click="getProfile()">Test Angular</button>
+        <a href="Login/Profile">
+            <input type="button" value="Click Me" />
+        </a>
+        <button href="#myModal" id="openBtn" data-toggle="modal" class="btn btn-default btn-primary">Groups</button>
+        <div class="modal fade" id="myModal" style="">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title ">Groups</h3>
+                    </div>
+                    <div class="modal-body ">
+                        <table id="example" class="table table-hover table-responsive">
+                            <thead id="tblHead">
+                                <tr>
+                                    <th class="sorting">Group's Name</th>
+                                    <th>Members</th>
+                                    <th class="text-right">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="group in Groups">
+                                    <td><a style="font-weight: bold;" href="{{group.link}}">{{group.name}}</a></td>
+                                    <td>{{group.member}}</td>
+                                    <td class="text-right"><button class="btn btn-default btn-responsive">Action</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div><!-- /.modal-body -->
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+    </div>*@
+
+<div id="profile" class="col-md-10 col-md-offset-1 removePadding">
+    <div id="Menu_left" class="col-md-2 col-xs-3">
+        <div id="menu">
+            <img class="img-responsive imageMarginBot" src="" alt="">
+            <ul class="list-group" id="sidebar-nav-1">
+                <li class="list-group-item">
+                    <a href="page_profile.html"><i class="glyphicon glyphicon-align-left"></i> Overall</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="page_profile_me.html"><i class="glyphicon glyphicon-user"></i> Profile</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="page_profile_users.html"><i class="glyphicon glyphicon-screenshot"></i> Followers</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="page_profile_projects.html"><i class="glyphicon glyphicon-th-list"></i> My Projects</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="page_profile_settings.html"><i class="glyphicon glyphicon-asterisk"></i> Settings</a>
+                </li>
+            </ul>
+        </div>
+        <div id="Task_progress">
+            <div id="Task_progress_title">
+                <div class="col-md-1 removePadding ">
+                    <i class="glyphicon glyphicon-align-left"></i>
+                </div>
+                <div class="col-md-10 removePadding" style="font-size: 16px;padding-left : 5px;">
+                    Task Progress
+                </div>
+                <div class="col-md-1 removePadding margin_bottom">
+                    <i class="glyphicon glyphicon-asterisk"></i>
+                </div>
+            </div>
+
+            <div>
+                Web Design <span class="pull-right">92%</span>
+                <div class="progress progress-xxs margin_bottom">
+                    <div style="width: 92%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="92" role="progressbar" class="progress-bar progress-bar-u">
+                    </div>
+                </div>
+            </div>
+            <div>
+                Unify Project <span class="pull-right">85%</span>
+                <div class="progress progress-xxs margin_bottom">
+                    <div style="width: 85%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="92" role="progressbar" class="progress-bar progress-bar-u">
+                    </div>
+                </div>
+            </div>
+            <div>
+                Sony Corporation <span class="pull-right">60%</span>
+                <div class="progress progress-xxs margin_bottom">
+                    <div style="width: 60%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="92" role="progressbar" class="progress-bar progress-bar-u">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="Menu_right" class="col-md-10">
+        <div class="col-md-12">
+            <div class="">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#timeline" data-toggle="tab">Timeline</a></li>
+                    <li><a href="#update" data-toggle="tab">Groups</a></li>
+                    <li><a href="#comments" data-toggle="tab">Comments </a></li>
+                    <li><a href="#schedule" data-toggle="tab">Schedule</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div id="timeline" role="tabpanel" class="tab-pane fade in active">
+                        <div class="col-xs-12 col-sm-10" id="new_status">
+                            <div class="col-md-12 removePadding">
+                                <ul class="navbar-nav" id="post_header" role="navigation">
+                                    <li><a href="#"><span class="glyphicon glyphicon-pencil"></span>Post</a></li>
+                                    <li><a href="#"><span class="glyphicon glyphicon-folder-open"></span>File</a></li>
+                                    <li><a href="#"><span class="glyphicon glyphicon-picture"></span>Photos</a></li>
+                                    <li><a href="#"><span class="glyphicon glyphicon-stats"></span>Poll</a></li>
+                                    <li><a href="#"><span class="glyphicon glyphicon-hand-right"></span>Question</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="col-xs-12" id="post_content">
+                                <div class="col-xs-1 col-sm-1 removePadding">
+                                    <img src="">
+                                </div>
+                                <div class="col-xs-11 col-sm-11 textarea_wrap">
+                                    <textarea class="col-xs-12" placeholder="What's on your mind?"></textarea>
+                                </div>
+                                <div class="textarea_wrap"></div>
+                            </div>
+                            <div class="col-xs-12" id="post_footer">
+                                <div class="col-xs-5 col-xs-offset-7">
+                                    <button class="btn btn-default"><span class="glyphicon glyphicon-cog"></span>Custom<span class="caret"></span></button>
+                                    <button class="btn btn-primary">Post</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 		<div ng-repeat="group in Groups">
+                                    aaaaaaaaaaaaaaaaaaaa
+                                </div> -->
+
+                        <div id="feed" class="col-sm-10 boder_with_shadow">
+                            <div class="row">
+                                <div class="col-md-1 removePadding">
+                                    <img src="">
+                                </div>
+                                <div class="col-md-11 font_bold">
+                                    <a href="#">aaaa</a> ask a question
+                                    <br>
+                                    13 hours ago
+                                </div>
+                            </div>
+                            <div class="row border_bottom">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget massa nec turpis congue bibendum. Integer nulla felis, porta suscipit nulla et, dignissim commodo nunc. Morbi a semper nulla.
+
+                                Proin mauris odio, pharetra quis ligula non, vulputate vehicula quam. Nunc in libero vitae nunc ultricies tincidunt ut sed leo. Sed luctus dui ut congue consequat. Cras consequat nisl ante, nec malesuada velit pellentesque ac. Pellentesque nec arcu in ipsum iaculis convallis.
+                            </div>
+                            <div id="like_share_comment" class="row border_bottom">
+                                <a href="#" class="font_bold"><span class="glyphicon glyphicon-thumbs-up"></span> Like</a>
+                                <a href="#" class="font_bold"><span class="glyphicon glyphicon-comment"></span> Comment</a>
+                                <a href="#" class="font_bold"><span class="glyphicon glyphicon-share"></span> Share</a>
+                            </div>
+                            <div id="comment" class="row">
+                                <div class="background_gray">
+                                    <div class="col-md-1 removePadding ">
+                                        <img class="stretch_img" src="" alt="">
+                                    </div>
+                                    <div class="col-md-11 removePadding">
+                                        <ul class="list-group ">
+                                            <li class="list-group-item ">
+                                                <a class=" font_bold" href="#">AnhDD</a>
+                                                <span>
+                                                    Proin mauris odio, pharetra quis ligula non, vulputate vehicula quam. Nunc in libero vitae nunc ultricies tincidunt ut sed leo. Sed luctus dui ut congue consequat. Cras consequat nisl ante, nec malesuada velit pellentesque ac. Pellentesque nec arcu in ipsum iaculis convallis.
+                                                </span>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <a href="#">Like</a>&nbsp
+                                                <span class="font_bold">July 5, 2016 at 2:54 AM  </span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    @*Groupppppp*@
+                    <div id="update" role="tabpanel" class="tab-pane fade in">
+                
+                        <table id="example" class="table table-hover table-responsive">
+                            <thead id="tblHead">
+                                <tr>
+                                    <th class="sorting">Group's Name</th>
+                                    <th class="text-right">Last Activity</th>
+                                    <th class="text-right">Membership</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var group in @Model.Jobject.groups)
+                                {
+                                    <tr>
+                                        <td>
+                                            <a style="font-weight: bold;" href="">@group.name</a>
+                                            <br />@group.description
+                                            <br />@group.memberCount &nbsp Member
+                                            &nbsp Owner: <a href="#"> @group.owner.name</a>
+                                        </td>
+                                        <td class="text-right">@group.lastFeedElementPostDate</td>
+                                        <td class="text-right">
+                                            @group.myRole
+                                    </td>
+                                         
+                                    </tr>
+                                }
+                                
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div id="comments" role="tabpanel" class="tab-pane fade in">
+                        C
+                    </div>
+
+                    <div id="schedule" role="tabpanel" class="tab-pane fade in">
+                        D
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section CustomScripts {
+    
+
+<script type="text/javascript">
+    //Define table
+    $(document).ready(function () {
+        $('#example').DataTable({
+            "pageLength": 10,
+            "lengthChange": false,
+        });
+    });
+
+    //Text Area
+    function textarea(e) {
+        $(e).css({ 'height': '65px', 'overflow-y': 'hidden' }).height(e.scrollHeight - 30);
+    }
+    $('textarea').each(function () {
+        textarea(this);
+    }).on('input', function () {
+        textarea(this);
+    });
+</script>
+
+}
