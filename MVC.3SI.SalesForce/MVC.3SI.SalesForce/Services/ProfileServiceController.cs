@@ -17,12 +17,10 @@ namespace MVC._3SI.SalesForce.Services
         // GET api/profileservice
         public string Get()
         {
-            
-            string profile = "";
             //return profile.GetProfile();
             //profile = Getprofile.GetProfile();
             var getProfile = new ProfileModel(Convert.ToString(Constants.RefreshAccessTokenSession));
-            return getProfile.Text;
+            return getProfile.GroupJson;
         }
 
 

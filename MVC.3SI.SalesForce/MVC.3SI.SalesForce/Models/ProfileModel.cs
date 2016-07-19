@@ -12,20 +12,18 @@ namespace MVC._3SI.SalesForce.Models
     //=======================================================================
     public class ProfileModel
     {
-        public string Text { get; set; }
+        public string GroupJson { get; set; }
 
-        public Groups.GroupRoot Jobject;
+        public Groups.GroupJsonRespone Grouplist;
         public ProfileModel() {
 
         }
         public ProfileModel(string accessToken)
         {
             var apiServices = new ApiService(accessToken);
-            Text = apiServices.GetUserGroup();
-
+            GroupJson = apiServices.GetUserGroup();
             // Convert json string to C# object 
-            Jobject = JsonConvert.DeserializeObject<Groups.GroupRoot>(Text);
-
+            Grouplist = JsonConvert.DeserializeObject<Groups.GroupJsonRespone>(GroupJson);
         }
     }
 }

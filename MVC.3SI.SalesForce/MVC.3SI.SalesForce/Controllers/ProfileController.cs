@@ -17,10 +17,10 @@ namespace MVC._3SI.SalesForce.Controllers
         }
         //
         // GET: /Profile/
-        public string GetProfile()
+        public string GetGroup()
         {
             var profileInfo = new ProfileModel(Convert.ToString(Session[Constants.AccessTokenSession]));
-            return profileInfo.Text;
+            return profileInfo.GroupJson;
         }
 
 	}
