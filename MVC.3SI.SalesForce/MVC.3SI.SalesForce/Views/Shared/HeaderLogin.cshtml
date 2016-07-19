@@ -1,5 +1,10 @@
 ﻿@using MVC._3SI.SalesForce.Infrastructure;
 @using MVC._3SI.SalesForce.Infrastructure.Salesforce;
+@using MVC._3SI.SalesForce.Models;
+@using MVC._3SI.SalesForce.Entity.Salesforce;
+@using Newtonsoft.Json;
+
+
 <ul class="nav navbar-nav navbar-right">
     @{
         var accessToken = Convert.ToString(Session[Constants.AccessTokenSession]);
@@ -13,6 +18,11 @@
     }
     else
     {
-        <li><a href="#">Logged in User here</a></li>
+        var apiService = new ApiService(accessToken);
+        var text = apiService.GetUserFeeds();
+        var Joject = JsonConvert.DeserializeObject<RootObject>(text);
+        <li><a href="#">@Joject.elements[1].parent.displayName</a></li>
+        <li><a href="#">log out</a></li>
+
     }
 </ul>

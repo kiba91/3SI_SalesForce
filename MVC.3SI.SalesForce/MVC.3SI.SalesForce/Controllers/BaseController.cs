@@ -12,12 +12,12 @@ namespace MVC._3SI.SalesForce.Controllers
         protected override void OnActionExecuting(ActionExecutingContext filterContext)
         {
             //verify user login is added to cookie
-            var tokenCookie = Convert.ToString(Session[Constants.AccessTokenSession]);
-            if (string.IsNullOrEmpty(tokenCookie))
-            {
-                var accessToken = new AccessTokenService();
-                Response.Redirect(accessToken.AuthorizationEndpoint);
-            }
+            //var tokenCookie = Convert.ToString(Session[Constants.AccessTokenSession]);
+            //if (string.IsNullOrEmpty(tokenCookie))
+            //{
+            //    var accessToken = new AccessTokenService();
+            //    Response.Redirect(accessToken.AuthorizationEndpoint);
+            //}
             base.OnActionExecuting(filterContext);
         }
     }
