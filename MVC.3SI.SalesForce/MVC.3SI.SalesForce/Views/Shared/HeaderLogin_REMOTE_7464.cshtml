@@ -1,0 +1,19 @@
+﻿@using MVC._3SI.SalesForce.Infrastructure;
+@using MVC._3SI.SalesForce.Infrastructure.Salesforce;
+
+<ul class="nav navbar-nav navbar-right">
+    @{
+        var accessToken = Convert.ToString(Session[Constants.AccessTokenSession]);
+    }
+
+    @if (string.IsNullOrEmpty(accessToken))
+    {
+        var accessTokenService = new AccessTokenService();
+
+        <li><a href="@accessTokenService.AuthorizationEndpoint">Login</a></li>
+    }
+    else
+    {
+        <li><a href="#">Logged in User here</a></li>
+    }
+</ul>

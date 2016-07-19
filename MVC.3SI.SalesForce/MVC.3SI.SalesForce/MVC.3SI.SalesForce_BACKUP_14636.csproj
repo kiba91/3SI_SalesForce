@@ -162,8 +162,11 @@
     <Compile Include="Infrastructure\ApiWebRequest.cs" />
     <Compile Include="Models\ChatterModel.cs" />
     <Compile Include="Models\GenericModel.cs" />
+<<<<<<< .merge_file_a07380
     <Compile Include="Models\HeaderLogin.cs" />
+=======
     <Compile Include="Models\ProfileModel.cs" />
+>>>>>>> .merge_file_a07824
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ProfileServiceController.cs" />
     <Compile Include="Services\ChatterServiceController.cs" />
