@@ -19,7 +19,6 @@ namespace MVC._3SI.SalesForce.Infrastructure.Salesforce
             };
             return request.DoRequest();
         }
-
         public string GetUserProfile()
         {
             var request = new ApiWebRequest(string.Concat(BaseUrl, "/chatter/users/me"));

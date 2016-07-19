@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MVC._3SI.SalesForce.Infrastructure;
+using MVC._3SI.SalesForce.Infrastructure.Salesforce;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,6 +14,15 @@ namespace MVC._3SI.SalesForce.Controllers
         public ActionResult Index()
         {
             return View();
+        }
+        public ActionResult Logoff()
+        {
+            var accessToken = Convert.ToString(Session[Constants.AccessTokenSession]);
+            var accessTokenService = new AccessTokenService();
+            var apiService = new ApiService(accessToken);
+            accessTokenService.PostRevoke(accessToken);
+            Session.Abandon();
+            return RedirectToAction("Index","Home");
         }
     }
 }

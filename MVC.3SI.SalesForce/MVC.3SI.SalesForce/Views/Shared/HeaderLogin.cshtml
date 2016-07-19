@@ -19,10 +19,11 @@
     else
     {
         var apiService = new ApiService(accessToken);
+        var accessTokenService = new AccessTokenService();
         var text = apiService.GetUserFeeds();
-        var Joject = JsonConvert.DeserializeObject<RootObject>(text);
-        <li><a href="#">@Joject.elements[1].parent.displayName</a></li>
-        <li><a href="#">log out</a></li>
-
+        var Joject = JsonConvert.DeserializeObject<ChatterRootObject>(text);
+        var text1 = apiService.GetUserProfile();
+        <li><a href="#">@Joject.elements[1].parent.displayName</a></li>        
+        <li>@Html.ActionLink("Log off","Logoff","Home")</li>
     }
 </ul>

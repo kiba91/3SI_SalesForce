@@ -27,7 +27,6 @@ namespace MVC._3SI.SalesForce.Entity.Salesforce
             }
             public class Group
             {
-                public BannerPhoto bannerPhoto { get; set; }
                 public string description { get; set; }
                 public string lastFeedElementPostDate { get; set; }
                 public int memberCount { get; set; }

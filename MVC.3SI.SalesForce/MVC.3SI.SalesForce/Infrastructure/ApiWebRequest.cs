@@ -18,9 +18,10 @@ namespace MVC._3SI.SalesForce.Infrastructure
             Url = url;
             Method = method;
         }
-
+        
         public ApiWebRequest(string url) : this(url,Constants.Method.Get) {
         }
+
 
         public string DoRequest()
         {

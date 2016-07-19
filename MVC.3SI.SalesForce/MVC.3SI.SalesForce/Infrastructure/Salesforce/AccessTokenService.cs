@@ -51,5 +51,11 @@ namespace MVC._3SI.SalesForce.Infrastructure.Salesforce
 
             return JsonConvert.DeserializeObject<AuthorizationToken>(response);
         }
+       
+        public string PostRevoke(string token)
+        {
+            var request = new ApiWebRequest(string.Format("{0}/services/oauth2/revoke?token={1}", _loginRemoteUrl, token), Constants.Method.Post);
+            return request.DoRequest();
+        }
     }
 }
