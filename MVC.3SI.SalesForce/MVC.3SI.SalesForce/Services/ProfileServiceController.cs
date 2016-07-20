@@ -19,8 +19,9 @@ namespace MVC._3SI.SalesForce.Services
         {
             //return profile.GetProfile();
             //profile = Getprofile.GetProfile();
-            var getProfile = new ProfileModel(Convert.ToString(Constants.RefreshAccessTokenSession));
-            return getProfile.GroupJson;
+            //var getProfile = new ProfileModel(Convert.ToString(Constants.RefreshAccessTokenSession));
+         //   return getProfile.GroupJson;
+            return "value";
         }
 
 

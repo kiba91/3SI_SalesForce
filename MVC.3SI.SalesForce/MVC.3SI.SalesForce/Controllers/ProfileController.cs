@@ -12,15 +12,8 @@ namespace MVC._3SI.SalesForce.Controllers
     {
         public ActionResult Index()
         {
-            var profileInfo = new ProfileModel(Convert.ToString(Session[Constants.AccessTokenSession]));
-            return View(profileInfo);
-        }
-        //
-        // GET: /Profile/
-        public string GetGroup()
-        {
-            var profileInfo = new ProfileModel(Convert.ToString(Session[Constants.AccessTokenSession]));
-            return profileInfo.GroupJson;
+           
+            return View();
         }
 
 	}

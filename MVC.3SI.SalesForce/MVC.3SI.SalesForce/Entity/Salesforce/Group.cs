@@ -35,7 +35,7 @@ namespace MVC._3SI.SalesForce.Entity.Salesforce
                 public Owner owner { get; set; }
                 public Photo2 photo { get; set; }
             }
-            public class GroupJsonRespone
+            public class GroupList
             {
                 public List<Group> groups { get; set; }
             }
