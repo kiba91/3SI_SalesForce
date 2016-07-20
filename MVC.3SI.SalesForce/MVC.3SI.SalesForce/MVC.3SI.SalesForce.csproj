@@ -146,12 +146,14 @@
     <Compile Include="Controllers\AuthenticationController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\ChatterController.cs" />
+    <Compile Include="Controllers\GroupController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Entity\Salesforce\AuthorizationToken.cs" />
     <Compile Include="Entity\Salesforce\Chatter.cs" />
     <Compile Include="Entity\Salesforce\ErrorResponse.cs" />
     <Compile Include="Entity\Salesforce\Group.cs" />
+    <Compile Include="Entity\Salesforce\Profile.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -163,6 +165,7 @@
     <Compile Include="Models\ChatterModel.cs" />
     <Compile Include="Models\GenericModel.cs" />
     <Compile Include="Models\HeaderLogin.cs" />
+    <Compile Include="Models\GroupModel.cs" />
     <Compile Include="Models\ProfileModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ProfileServiceController.cs" />
@@ -184,6 +187,7 @@
     <Content Include="Views\Shared\HeaderLogin.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Profile\Index.cshtml" />
+    <Content Include="Views\Group\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -209,7 +213,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>2925</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:81</IISUrl>
+          <IISUrl>http://localhost:84</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

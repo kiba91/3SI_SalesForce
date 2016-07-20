@@ -1,0 +1,66 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<table id="example" class="table table-hover table-responsive">
+    <thead id="tblHead">
+        <tr>
+            <th class="sorting">Group's Name</th>
+            <th class="text-right">Last Activity</th>
+            <th class="text-right">Membership</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var group in @Model.Grouplist.groups)
+        {
+            <tr>
+
+                <td width="60%">
+                    <div class="col-md-2">
+                        <img class="img-responsive" src="@group.photo.mediumPhotoUrl" />
+                    </div>
+                    <div class="col-md-10">
+                        <a style="font-weight: bold;" href="#">@group.name</a>
+                        <br />@group.description
+                        <br />@group.memberCount Member
+                        <br />Owner: <a href="#"> @group.owner.name</a>
+                    </div>
+
+                </td>
+                <td class="text-right"><div typeof="type=" datetime">@group.lastFeedElementPostDate</div></td>
+                <td class="text-right">
+                    @group.myRole
+                </td>
+
+            </tr>
+        }
+
+    </tbody>
+</table>
+
+@section CustomScripts {
+
+
+    <script type="text/javascript">
+        //Define table
+        $(document).ready(function () {
+            $('#example').DataTable({
+                "pageLength": 10,
+                "lengthChange": false,
+            });
+        });
+
+        //Text Area
+        function textarea(e) {
+            $(e).css({ 'height': '65px', 'overflow-y': 'hidden' }).height(e.scrollHeight - 30);
+        }
+        $('textarea').each(function () {
+            textarea(this);
+        }).on('input', function () {
+            textarea(this);
+        });
+    </script>
+}
+
+
+
+
