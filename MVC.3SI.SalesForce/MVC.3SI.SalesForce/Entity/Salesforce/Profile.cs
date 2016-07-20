@@ -8,4 +8,8 @@ namespace MVC._3SI.SalesForce.Entity.Salesforce
     public class Profile
     {
     }
+    public class ProfileRootObject
+    {
+        public string displayName { get; set; }
+    }
 }

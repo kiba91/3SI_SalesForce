@@ -20,10 +20,10 @@
     {
         var apiService = new ApiService(accessToken);
         var accessTokenService = new AccessTokenService();
-        var text = apiService.GetUserFeeds();
-        var Joject = JsonConvert.DeserializeObject<ChatterRootObject>(text);
-        var text1 = apiService.GetUserProfile();
-        <li><a href="#">@Joject.elements[1].parent.displayName</a></li>        
+        var userProfileJsonText = apiService.GetUserProfile();
+        var jojectProfile = JsonConvert.DeserializeObject<ProfileRootObject>(userProfileJsonText);
+        
+        <li><a href="#">hello @jojectProfile.displayName</a></li>        
         <li>@Html.ActionLink("Log off","Logoff","Home")</li>
     }
 </ul>
