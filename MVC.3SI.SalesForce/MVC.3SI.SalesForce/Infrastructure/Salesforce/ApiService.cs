@@ -19,6 +19,8 @@ namespace MVC._3SI.SalesForce.Infrastructure.Salesforce
             };
             return request.DoRequest();
         }
+
+        //Request to get User profile
         public string GetUserProfile()
         {
             var request = new ApiWebRequest(string.Concat(BaseUrl, "/chatter/users/me"));
@@ -28,6 +30,7 @@ namespace MVC._3SI.SalesForce.Infrastructure.Salesforce
             return request.DoRequest();
         }
 
+        //Request to get User group
         public string GetUserGroup()
         {
             var request = new ApiWebRequest(string.Concat(BaseUrl, "/chatter/groups"));

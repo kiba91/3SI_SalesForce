@@ -10,7 +10,7 @@ namespace MVC._3SI.SalesForce.Models
 {
     public class HeaderLogin : GenericModel
     {
-        public ChatterRootObject Jobject;
+        public Chatter.ChatterRootObject Jobject;
         public string Text { get; set; }
         public HeaderLogin()
         {
@@ -20,7 +20,7 @@ namespace MVC._3SI.SalesForce.Models
         {
             var apiServices = new ApiService(accessToken);
             Text = apiServices.GetUserFeeds();
-            Jobject = JsonConvert.DeserializeObject<ChatterRootObject>(Text);
+            Jobject = JsonConvert.DeserializeObject<Chatter.ChatterRootObject>(Text);
         }
     }
 

@@ -12,8 +12,8 @@ namespace MVC._3SI.SalesForce.Controllers
     {
         public ActionResult Index()
         {
-           
-            return View();
+            var profileInfo = new ProfileModel(Convert.ToString(Session[Constants.AccessTokenSession]));
+            return View(profileInfo);
         }
 
 	}

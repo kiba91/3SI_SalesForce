@@ -2,6 +2,16 @@
     margin-top:70px;
 }
 
+#feed{
+    margin-bottom: 40px;
+}
+
+.fontBold{
+    font-weight: bold;
+}
+.textColorGray{
+    color : gray;
+}
 
 td {
     max-width: 0;

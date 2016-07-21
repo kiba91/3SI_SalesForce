@@ -153,6 +153,7 @@
     <Compile Include="Entity\Salesforce\Chatter.cs" />
     <Compile Include="Entity\Salesforce\ErrorResponse.cs" />
     <Compile Include="Entity\Salesforce\Group.cs" />
+    <Compile Include="Entity\Salesforce\FeedProfile.cs" />
     <Compile Include="Entity\Salesforce\Profile.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -213,7 +214,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>2925</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:84</IISUrl>
+          <IISUrl>http://localhost:86</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
