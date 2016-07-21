@@ -23,9 +23,7 @@ namespace MVC._3SI.SalesForce.Controllers
                     var refreshTokenCookie = new HttpCookie(Constants.RefreshAccessTokenSession, tokenData.refresh_token);
                     refreshTokenCookie.Expires = DateTime.Now.AddYears(1);
                     Response.SetCookie(refreshTokenCookie);
-                    //Response.Redirect("/chatter");
-                    Response.Write("token: " + tokenData.access_token);
-                    Response.Write("<br>refresh token: " + tokenData.refresh_token);
+                    Response.Redirect("/Home");
                 }
                 else
                 {
@@ -35,15 +33,10 @@ namespace MVC._3SI.SalesForce.Controllers
                         //the author code is expired, get new access token by refresh token
                         var refreshTokenData = accessTokenRequest.RefreshAccessToken(refreshTokenCookie.Value);
                         if (!string.IsNullOrEmpty(refreshTokenData.access_token)) {
-                            Session[Constants.AccessTokenSession] = refreshTokenData.access_token;
-
-                            Response.Write("new access token: " + refreshTokenData.access_token);
+                            Session[Constants.AccessTokenSession] = refreshTokenData.access_token;                          
                         }
                     }
                 }
-
-                Response.Write("<br><a href=\"/chatter\">Go to Chatter page</a>");
-
             }
             else
             {
