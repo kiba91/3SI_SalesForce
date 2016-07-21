@@ -2,6 +2,9 @@
 using System.Web.Mvc;
 using System.Web.Routing;
 using System.Net;
+using System.Web.Optimization;
+using MvcApp.App_Start;
+
 namespace MVC._3SI.SalesForce
 {
     public class MvcApplication : System.Web.HttpApplication
@@ -13,6 +16,7 @@ namespace MVC._3SI.SalesForce
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             ServicePointManager.SecurityProtocol
                 = SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12;
+            BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
     }
 }
