@@ -13,7 +13,6 @@
         @foreach (var group in @Model.Grouplist.groups)
         {
             <tr>
-
                 <td width="60%">
                     <div class="col-md-2">
                         <img class="img-responsive" src="@group.photo.mediumPhotoUrl" />
@@ -30,16 +29,12 @@
                 <td class="text-right">
                     @group.myRole
                 </td>
-
             </tr>
         }
-
     </tbody>
 </table>
 
 @section CustomScripts {
-
-
     <script type="text/javascript">
         //Define table
         $(document).ready(function () {

@@ -4,46 +4,8 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-    @*<div ng-app="myApp" ng-controller="ProfileController">
-        <h1>{{myWelcome}}</h1>
-        {{status}}
-        <div>{{getProfile}}</div>
-        <button ng-click="getProfile()">Test Angular</button>
-        <a href="Login/Profile">
-            <input type="button" value="Click Me" />
-        </a>
-        <button href="#myModal" id="openBtn" data-toggle="modal" class="btn btn-default btn-primary">Groups</button>
-        <div class="modal fade" id="myModal" style="">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h3 class="modal-title ">Groups</h3>
-                    </div>
-                    <div class="modal-body ">
-                        <table id="example" class="table table-hover table-responsive">
-                            <thead id="tblHead">
-                                <tr>
-                                    <th class="sorting">Group's Name</th>
-                                    <th>Members</th>
-                                    <th class="text-right">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr ng-repeat="group in Groups">
-                                    <td><a style="font-weight: bold;" href="{{group.link}}">{{group.name}}</a></td>
-                                    <td>{{group.member}}</td>
-                                    <td class="text-right"><button class="btn btn-default btn-responsive">Action</button></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div><!-- /.modal-body -->
-                </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-        </div><!-- /.modal -->
-    </div>*@
-
-<div id="profile">
-    <div id="Menu_left" class="col-md-2 col-xs-3">
+<div id="profile" class="container">
+    <div id="Menu_left" class="col-md-2">
         <div>
             <ul class="removePadding" style="list-style-type:none">
                 <li><img src=@Model.profileInfo.photo.mediumPhotoUrl class="img-thumbnail" alt="Cinque Terre" width="304" height="236"> <br /></li>
@@ -55,13 +17,14 @@
                     <span class="glyphicon glyphicon-briefcase"> </span>
                     @Model.profileInfo.title
                 </li>
-                <li class="fontBold"><span class="glyphicon glyphicon-phone-alt"></span>
+                <li class="fontBold">
+                    <span class="glyphicon glyphicon-phone-alt"></span>
                     Contact
                 </li>
                 <li>
                     @foreach (var phoneNum in @Model.profileInfo.phoneNumbers)
                     {
-                       @phoneNum.phoneNumber <span class="textColorGray">( @phoneNum.phoneType )</span> <br />
+                        @phoneNum.phoneNumber <span class="textColorGray">( @phoneNum.phoneType )</span> <br />
                     }
                 </li>
                 <li>@Model.profileInfo.address.street</li>
@@ -130,86 +93,80 @@
                         <!-- 		<div ng-repeat="group in Groups">
                                     aaaaaaaaaaaaaaaaaaaa
                                 </div> -->
-
-                       
-                            @foreach (var feed in @Model.feedProfile.elements)
-                            {
-                             <div id="feed" class="col-sm-12 boder_with_shadow">
+                        @foreach (var feed in @Model.feedProfile.elements)
+                        {
+                            <div id="feed" class="col-sm-12 boder_with_shadow">
                                 <div class="row">
                                     <div class="col-md-1 removePadding">
                                         <img src="@feed.parent.photo.mediumPhotoUrl">
                                     </div>
                                     <div class="col-md-11 ">
                                         <a class="font_bold" href="#">@feed.header.messageSegments[0].text</a>
-                                        @for (int i = 1; i < @feed.header.messageSegments.Count();i++ )
+                                        @for (int i = 1; i < @feed.header.messageSegments.Count(); i++)
                                         {
                                             if (@feed.header.messageSegments[i].reference != null)
                                             {
-                                                if (@feed.header.messageSegments[i].type == "EntityLink" )
+                                                if (@feed.header.messageSegments[i].type == "EntityLink")
                                                 {
                                                     <a href="#">@feed.header.messageSegments[i].text</a>
                                                 }
-                                                else  {@feed.header.messageSegments[i].text}
-                                                
-                                            }
-                                             else
-                                             {
-                                                 @feed.header.messageSegments[i].text
-                                             }
-                                        }
-                                       
-                                     
-                                        <div>@feed.body.text</div>
-                                        <div>@feed.createdDate</div> 
-                                    </div>
-                                </div>
-                               <div class="row border_bottom">
-                                </div>
-                            <div id="like_share_comment" class="row border_bottom">
-                                <a href="#" class="font_bold"><span class="glyphicon glyphicon-thumbs-up"></span> Like</a>
-                                <a href="#" class="font_bold"><span class="glyphicon glyphicon-comment"></span> Comment</a>
-                                <a href="#" class="font_bold"><span class="glyphicon glyphicon-share"></span> Share</a>
-                            </div>
-                            @if (feed.capabilities.comments.page.commentList != null)
-                            {
-                                foreach (var comment in feed.capabilities.comments.page.commentList)
-                                {
-                                       
-                                    <div id="comment" class="row">
-                                    <div class="background_gray">
-                                        <div class="col-md-1 removePadding ">
-                                            <img class="stretch_img" src="@comment.user.photo.smallPhotoUrl" alt="">
-                                        </div>
-                                        <div class="col-md-11 removePadding">
-                                            <ul class="list-group ">
-                                                <li class="list-group-item ">
-                                                    <a class=" font_bold" href="#">@comment.user.name</a>
-                                                    <span>
-                                                        @comment.body.text
-                                                    </span>
-                                                </li>
-                                                <li class="list-group-item">
-                                                    <a href="#">Like</a>&nbsp
-                                                    <span class="font_bold">July 5, 2016 at 2:54 AM  </span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    </div>
-                                }
-                            }
-                          
-                        </div>
-                            }
+                                                else
+                                                {@feed.header.messageSegments[i].text}
 
-                           
-                            
+                                            }
+                                            else
+                                            {
+                                                @feed.header.messageSegments[i].text
+                                            }
+                                        }
+
+
+                                        <div>@feed.body.text</div>
+                                        <div>@feed.createdDate</div>
+                                    </div>
+                                </div>
+                                <div class="row border_bottom">
+                                </div>
+                                <div id="like_share_comment" class="row border_bottom">
+                                    <a href="#" class="font_bold"><span class="glyphicon glyphicon-thumbs-up"></span> Like</a>
+                                    <a href="#" class="font_bold"><span class="glyphicon glyphicon-comment"></span> Comment</a>
+                                    <a href="#" class="font_bold"><span class="glyphicon glyphicon-share"></span> Share</a>
+                                </div>
+                                @if (feed.capabilities.comments.page.commentList != null)
+                                {
+                                    foreach (var comment in feed.capabilities.comments.page.commentList)
+                                    {
+
+                                        <div id="comment" class="row">
+                                            <div class="background_gray">
+                                                <div class="col-md-1 removePadding ">
+                                                    <img class="stretch_img" src="@comment.user.photo.smallPhotoUrl" alt="">
+                                                </div>
+                                                <div class="col-md-11 removePadding">
+                                                    <ul class="list-group ">
+                                                        <li class="list-group-item ">
+                                                            <a class=" font_bold" href="#">@comment.user.name</a>
+                                                            <span>
+                                                                @comment.body.text
+                                                            </span>
+                                                        </li>
+                                                        <li class="list-group-item">
+                                                            <a href="#">Like</a>&nbsp
+                                                            <span class="font_bold">July 5, 2016 at 2:54 AM  </span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                }
+                            </div>
+                        }
                     </div>
 
-                    @*Groupppppp*@
-                    <div id="update" role="tabpanel" class="tab-pane fade in">
+                    @*<div id="update" role="tabpanel" class="tab-pane fade in">
 
-                       
+
                     </div>
 
                     <div id="comments" role="tabpanel" class="tab-pane fade in">
@@ -218,9 +175,23 @@
 
                     <div id="schedule" role="tabpanel" class="tab-pane fade in">
                         D
-                    </div>
+                    </div>*@
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+@section CustomScripts {
+    <script type="text/javascript">
+        //Text Area
+        function textarea(e) {
+            $(e).css({ 'height': '65px', 'overflow-y': 'hidden' }).height(e.scrollHeight - 30);
+        }
+        $('textarea').each(function () {
+            textarea(this);
+        }).on('input', function () {
+            textarea(this);
+        });
+    </script>
+    }

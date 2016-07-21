@@ -153,7 +153,7 @@
     <Compile Include="Entity\Salesforce\Chatter.cs" />
     <Compile Include="Entity\Salesforce\ErrorResponse.cs" />
     <Compile Include="Entity\Salesforce\Group.cs" />
-    <Compile Include="Entity\Salesforce\FeedProfile.cs" />
+    <Compile Include="Entity\Salesforce\NewFeed.cs" />
     <Compile Include="Entity\Salesforce\Profile.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

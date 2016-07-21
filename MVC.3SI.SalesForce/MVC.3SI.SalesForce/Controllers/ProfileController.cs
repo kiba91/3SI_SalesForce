@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using MVC._3SI.SalesForce.Infrastructure;
+using MVC._3SI.SalesForce.Infrastructure.Salesforce;
 using MVC._3SI.SalesForce.Models;
-using MVC._3SI.SalesForce.Infrastructure;
+using System;
+using System.Web.Mvc;
 
 namespace MVC._3SI.SalesForce.Controllers
 {
@@ -12,9 +10,17 @@ namespace MVC._3SI.SalesForce.Controllers
     {
         public ActionResult Index()
         {
-            var profileInfo = new ProfileModel(Convert.ToString(Session[Constants.AccessTokenSession]));
-            return View(profileInfo);
+            try
+            {
+                var profileInfo = new ProfileModel(Convert.ToString(Session[Constants.AccessTokenSession]));
+                return View(profileInfo);
+            }
+            catch (Exception)
+            {
+                var accessTokenService = new AccessTokenService();
+                return Redirect(accessTokenService.AuthorizationEndpoint);
+                throw;
+            }
         }
-
-	}
+    }
 }

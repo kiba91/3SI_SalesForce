@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using MVC._3SI.SalesForce.Infrastructure.Salesforce;
-using Newtonsoft.Json;
+﻿using System.Collections.Generic;
 
 namespace MVC._3SI.SalesForce.Entity.Salesforce
 {
@@ -17,7 +12,6 @@ namespace MVC._3SI.SalesForce.Entity.Salesforce
             public string displayName { get; set; }
             public string firstName { get; set; }
         }
-
 
         public class Parent
         {
@@ -39,6 +33,4 @@ namespace MVC._3SI.SalesForce.Entity.Salesforce
             public List<Element> elements { get; set; }
         }
     }
-
-    
 }
