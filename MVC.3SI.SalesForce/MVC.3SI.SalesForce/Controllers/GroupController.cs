@@ -15,8 +15,17 @@ namespace MVC._3SI.SalesForce.Controllers
         {
             try
             {
-                var groupInfo = new GroupModel(Convert.ToString(Session[Constants.AccessTokenSession]));
-                return View(groupInfo);
+                var session = this.Session;
+                if (session["GroupInfo"] != null)
+                {
+                    return View(session["GroupInfo"]);
+                }
+                else
+                {
+                    var groupInfo = new GroupModel(Convert.ToString(Session[Constants.AccessTokenSession]));
+                    Session["GroupInfo"] = groupInfo;
+                    return View(session["GroupInfo"]);
+                }
             }
             catch (Exception)
             {
