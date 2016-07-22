@@ -82,6 +82,6 @@ D:\3SI_SalesForce\MVC.3SI.SalesForce\MVC.3SI.SalesForce\bin\System.Web.Razor.xml
 D:\3SI_SalesForce\MVC.3SI.SalesForce\MVC.3SI.SalesForce\bin\System.Web.WebPages.xml
 D:\3SI_SalesForce\MVC.3SI.SalesForce\MVC.3SI.SalesForce\bin\System.Web.WebPages.Deployment.xml
 D:\3SI_SalesForce\MVC.3SI.SalesForce\MVC.3SI.SalesForce\bin\System.Web.WebPages.Razor.xml
-D:\3SI_SalesForce\MVC.3SI.SalesForce\MVC.3SI.SalesForce\obj\Debug\MVC.3SI.SalesForce.csprojResolveAssemblyReference.cache
 D:\3SI_SalesForce\MVC.3SI.SalesForce\MVC.3SI.SalesForce\obj\Debug\MVC.3SI.SalesForce.dll
 D:\3SI_SalesForce\MVC.3SI.SalesForce\MVC.3SI.SalesForce\obj\Debug\MVC.3SI.SalesForce.pdb
+D:\3SI_SalesForce\MVC.3SI.SalesForce\MVC.3SI.SalesForce\obj\Debug\MVC.3SI.SalesForce.csprojResolveAssemblyReference.cache
