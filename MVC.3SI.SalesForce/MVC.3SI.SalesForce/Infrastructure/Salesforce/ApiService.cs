@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace MVC._3SI.SalesForce.Infrastructure.Salesforce
 {
@@ -11,8 +12,21 @@ namespace MVC._3SI.SalesForce.Infrastructure.Salesforce
             AccessToken = accessToken;
             BaseUrl = Helper.GetAppSettingValue("SF_BaseUrl");
         }
+        /// <summary>
+        /// Make request to salesforce
+        /// </summary>
+        /// <param name="pathUrl"></param>
+        /// <returns>response json string</returns>
+        public string MakeRequest(string pathUrl) {
+            var request = new ApiWebRequest(string.Concat(BaseUrl, pathUrl));
+            request.HeaderSettings = new List<KeyValuePair<string, string>> {
+                new KeyValuePair<string, string>("Authorization","Bearer " + AccessToken)
+            };
+            return request.DoRequest();
+        }
 
-        public string GetUserFeeds() {
+        public string GetUserFeeds()
+        {
             var request = new ApiWebRequest(string.Concat(BaseUrl, "/chatter/feeds/news/me/feed-elements"));
             request.HeaderSettings = new List<KeyValuePair<string, string>> {
                 new KeyValuePair<string, string>("Authorization","Bearer " + AccessToken)
@@ -39,7 +53,6 @@ namespace MVC._3SI.SalesForce.Infrastructure.Salesforce
             };
             return request.DoRequest();
         }
-
     }
 
 }

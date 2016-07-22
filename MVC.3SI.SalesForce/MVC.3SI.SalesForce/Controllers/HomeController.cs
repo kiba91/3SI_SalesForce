@@ -22,6 +22,7 @@ namespace MVC._3SI.SalesForce.Controllers
             var apiService = new ApiService(accessToken);
             accessTokenService.PostRevoke(accessToken);
             Session.Abandon();
+            Response.Cookies.Remove(Constants.RefreshAccessTokenSession);
             return RedirectToAction("Index","Home");
         }
     }
