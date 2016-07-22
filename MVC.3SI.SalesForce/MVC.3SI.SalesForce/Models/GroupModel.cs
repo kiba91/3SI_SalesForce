@@ -14,10 +14,15 @@ namespace MVC._3SI.SalesForce.Models
         {
         }
 
+        /// <summary>
+        /// Get GroupInfo
+        /// </summary>
+        /// <param name="accessToken"></param>
         public GroupModel(string accessToken)
         {
+            string url = "/chatter/groups";
             var apiServices = new ApiService(accessToken);
-            var groupJson = apiServices.GetUserGroup();
+            var groupJson = apiServices.MakeRequest(url);
             // Convert json string to C# object
             Grouplist = JsonConvert.DeserializeObject<Groups.GroupList>(HttpUtility.HtmlDecode(groupJson));
         }

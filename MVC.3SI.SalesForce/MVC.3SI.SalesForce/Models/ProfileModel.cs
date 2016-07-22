@@ -18,12 +18,19 @@ namespace MVC._3SI.SalesForce.Models
         {
         }
 
+        /// <summary>
+        /// Get ProfileInfo & Newfeed
+        /// </summary>
+        /// <param name="accessToken"></param>
         public ProfileModel(string accessToken)
         {
+            string profilePathurl = "/chatter/users/me";
+            string feedUrl = "/chatter/feeds/news/me/feed-elements"; 
+
             //Request service
             var apiServices = new ApiService(accessToken);
-            var profileJson = apiServices.GetUserProfile();
-            var feedProfileJson = apiServices.GetUserFeeds();
+            var profileJson = apiServices.MakeRequest(profilePathurl);
+            var feedProfileJson = apiServices.MakeRequest(feedUrl);
             // Convert json string to C# object
             profileInfo = JsonConvert.DeserializeObject<Profile>(profileJson);
             feedProfile = JsonConvert.DeserializeObject<NewFeed.FeedList>(HttpUtility.HtmlDecode(feedProfileJson));

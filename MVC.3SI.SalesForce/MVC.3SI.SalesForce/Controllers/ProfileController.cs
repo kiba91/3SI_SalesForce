@@ -12,18 +12,8 @@ namespace MVC._3SI.SalesForce.Controllers
         {
             try
             {
-
-                var session = this.Session;
-                if (session["UserProfile"] != null)
-                {
-                    return View(session["UserProfile"]);
-                }
-                else
-                {
-                    var profileInfo = new ProfileModel(Convert.ToString(Session[Constants.AccessTokenSession]));
-                    Session["UserProfile"] = profileInfo;
-                    return View(session["UserProfile"]);
-                }
+                var profileInfo = new ProfileModel(Convert.ToString(Session[Constants.AccessTokenSession]));
+                return View(profileInfo);
             }
             catch (Exception)
             {

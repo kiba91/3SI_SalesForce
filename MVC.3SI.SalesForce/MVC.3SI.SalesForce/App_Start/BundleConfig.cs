@@ -24,13 +24,13 @@ namespace MvcApp.App_Start
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Assets/css/bootstrap-dialog.min.css",
                       "~/Assets/css/dataTables.bootstrap4.min.css",
-                      "~/Assets/css/style.css",
                       "~/Assets/css/bootstrap-theme.min.css",
                       "~/Assets/css/bootstrap.min.css"
                       ));
+            bundles.Add(new StyleBundle("~/Content/style").Include(
+          "~/Assets/css/style.css"));
 
 
-
-      }
+        }
     }
 }
